@@ -9,7 +9,7 @@ const transformDataBaseContent: Function_transformDataBaseContent = ({ type, dat
   if (type === Enum_transformDataBaseEnum.STRINGIFY) {
     let temp: TaskList = [];
     if (!Array.isArray(data)) {
-      console.error("transformDataBaseContent stringify need a array");
+      Utils.logError("transformDataBaseContent stringify need a array");
     } else {
       temp = data;
     }
@@ -18,16 +18,16 @@ const transformDataBaseContent: Function_transformDataBaseContent = ({ type, dat
   if (type === Enum_transformDataBaseEnum.PARSE) {
     let temp: TaskList = [];
     if (typeof data !== "string") {
-      console.error("transformDataBaseContent parse need a string");
+      Utils.logError("transformDataBaseContent parse need a string");
       return temp;
     }
     try {
       temp = JSON.parse(data);
     } catch (e) {
-      console.error(`transformDataBaseContent ${e.toString()}`);
+      Utils.logError(`transformDataBaseContent ${e.toString()}`);
     }
     if (!Array.isArray(temp)) {
-      console.error(`transformDataBaseContent parse result error`);
+      Utils.logError(`transformDataBaseContent parse result error`);
       return [];
     }
     return temp;

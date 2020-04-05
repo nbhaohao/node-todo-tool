@@ -22,11 +22,19 @@ const logResult = (msg: string) => {
   console.log(msg);
 };
 
+// 打印 error
+const logError = (msg: string) => {
+  if (process.env.DEBUG) {
+    console.error(msg);
+  }
+};
+
 const Utils = {
   getUserHomeDirectory,
   awaitWrap,
   logErrorAndExitProcess,
-  logResult
+  logResult,
+  logError,
 };
 
 export { Utils };
