@@ -87,8 +87,10 @@ const getTaskList = async (): Promise<TaskList> => {
 };
 
 const API_FILE = {
+  transformDataBaseContent,
   getTaskList,
   updateTaskList,
+  getDataBasePath,
 };
 
 export { API_FILE };
