@@ -1,7 +1,6 @@
-import packageJSON from "../package.json";
 import { TaskList } from "./types/constants";
 
-const VERSION = packageJSON.version;
+const VERSION = "0.0.1";
 const DB_FILE_NAME = ".node_todo_tool_db";
 const INITIAL_TASK_LIST = (): TaskList => [];
 const FILE_NOT_EXIST_ERROR = "ENOENT";

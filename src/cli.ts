@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as commander from "commander";
 import { CONSTANTS } from "./constants";
 import { API_TASK } from "./api/task";
