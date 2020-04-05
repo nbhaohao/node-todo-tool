@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var VERSION = "0.0.1";
+var VERSION = "0.0.10";
 var DB_FILE_NAME = ".node_todo_tool_db";
 var INITIAL_TASK_LIST = function () { return []; };
 var FILE_NOT_EXIST_ERROR = "ENOENT";

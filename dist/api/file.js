@@ -49,7 +49,7 @@ var transformDataBaseContent = function (_a) {
     if (type === file_1.Enum_transformDataBaseEnum.STRINGIFY) {
         var temp = [];
         if (!Array.isArray(data)) {
-            console.error("transformDataBaseContent stringify need a array");
+            utils_1.Utils.logError("transformDataBaseContent stringify need a array");
         }
         else {
             temp = data;
@@ -59,17 +59,17 @@ var transformDataBaseContent = function (_a) {
     if (type === file_1.Enum_transformDataBaseEnum.PARSE) {
         var temp = [];
         if (typeof data !== "string") {
-            console.error("transformDataBaseContent parse need a string");
+            utils_1.Utils.logError("transformDataBaseContent parse need a string");
             return temp;
         }
         try {
             temp = JSON.parse(data);
         }
         catch (e) {
-            console.error("transformDataBaseContent " + e.toString());
+            utils_1.Utils.logError("transformDataBaseContent " + e.toString());
         }
         if (!Array.isArray(temp)) {
-            console.error("transformDataBaseContent parse result error");
+            utils_1.Utils.logError("transformDataBaseContent parse result error");
             return [];
         }
         return temp;

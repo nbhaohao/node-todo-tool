@@ -20,10 +20,17 @@ var logErrorAndExitProcess = function (error) {
 var logResult = function (msg) {
     console.log(msg);
 };
+// 打印 error
+var logError = function (msg) {
+    if (process.env.DEBUG) {
+        console.error(msg);
+    }
+};
 var Utils = {
     getUserHomeDirectory: getUserHomeDirectory,
     awaitWrap: awaitWrap,
     logErrorAndExitProcess: logErrorAndExitProcess,
-    logResult: logResult
+    logResult: logResult,
+    logError: logError,
 };
 exports.Utils = Utils;
