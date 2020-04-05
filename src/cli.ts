@@ -13,13 +13,18 @@ const registerActions = (program: commander.Command) => {
   program
     .command("add <taskName>")
     .description("add a task")
-    .action(API_TASK.addTask);
+    .action((taskName) => API_TASK.addTask(taskName, null, null));
 
   // 删除所有任务
+  program.command("clear").description("clear all tasks").action(API_TASK.clearTask);
+
+  // 显示所有任务
   program
-    .command("clear")
-    .description("clear all tasks")
-    .action(API_TASK.clearTask);
+    .command("list", { isDefault: true })
+    .description("show all tasks")
+    .action(() => {
+      void API_TASK.showTaskList();
+    });
 };
 
 // 启动
